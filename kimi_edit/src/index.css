@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800;900&family=DM+Sans:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;1,400;1,500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 270 60% 98%;
+    --foreground: 270 55% 12%;
+    --card: 0 0% 100%;
+    --card-foreground: 270 55% 12%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 270 55% 12%;
+    --primary: 275 67% 40%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 270 60% 98%;
+    --secondary-foreground: 270 55% 12%;
+    --muted: 270 30% 94%;
+    --muted-foreground: 270 15% 45%;
+    --accent: 37 91% 43%;
+    --accent-foreground: 270 55% 12%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 270 20% 88%;
+    --input: 270 20% 88%;
+    --ring: 275 67% 40%;
+    --radius: 0.625rem;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-gw-lavender text-gw-dark font-dmsans antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-nunito font-black tracking-tight;
+  }
+
+  ::selection {
+    background-color: rgba(107, 33, 168, 0.2);
+    color: #1C0A2E;
+  }
+}
+
+@layer components {
+  .eyebrow {
+    @apply text-xs font-dmsans font-semibold uppercase tracking-[0.18em];
+  }
+
+  .card-rounded {
+    @apply rounded-3xl shadow-card transition-all duration-300;
+  }
+
+  .card-rounded:hover {
+    @apply shadow-lift -translate-y-2;
+  }
+
+  .btn-gold {
+    @apply bg-gw-gold text-gw-dark font-dmsans font-extrabold px-7 py-3.5 rounded-2xl shadow-button transition-all duration-200;
+  }
+
+  .btn-gold:hover {
+    @apply -translate-y-0.5 scale-[1.02] shadow-lift;
+  }
+
+  .btn-primary-purple {
+    @apply bg-gw-purple text-white font-dmsans font-bold px-7 py-3.5 rounded-2xl shadow-button transition-all duration-200;
+  }
+
+  .btn-primary-purple:hover {
+    @apply -translate-y-0.5 scale-[1.02] shadow-lift;
+  }
+
+  .btn-ghost {
+    @apply border-2 border-gw-dark/20 text-gw-dark font-dmsans font-semibold px-7 py-3.5 rounded-2xl transition-all duration-200;
+  }
+
+  .btn-ghost:hover {
+    @apply border-gw-purple text-gw-purple -translate-y-0.5;
+  }
+
+  .text-devotional {
+    @apply font-lora italic text-gw-dark/70;
+  }
+
+  .section-padding {
+    @apply px-4 sm:px-6 lg:px-8 xl:px-[8vw];
+  }
+
+  .grain-overlay {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.025;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
